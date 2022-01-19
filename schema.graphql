@@ -1,0 +1,20 @@
+type Speaker {
+	email: String!
+	firstname: String!
+	lastname: String!
+	picture: String
+	bio: String
+	talks: [Talk] @relation
+}
+
+type Talk {
+	title: String!
+	description: String!
+	video_url: String!
+	speaker: Speaker!
+}
+
+type Query {
+	talks: [Talk]
+	speakers: [Speaker]
+}
